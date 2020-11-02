@@ -156,5 +156,4 @@ class MemberRepositoryTest {
         memberRepository.save(m1);
         memberRepository.save(m2);
     }
-
 }
