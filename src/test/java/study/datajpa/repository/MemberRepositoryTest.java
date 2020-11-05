@@ -272,6 +272,6 @@ class MemberRepositoryTest {
         em.clear();
 
         //when
-        List<Member> findMember = memberRepository.findLockByUsername("member1");
+        List<Member> findMember = memberRepository.findLockByUsername("member2");
     }
 }
