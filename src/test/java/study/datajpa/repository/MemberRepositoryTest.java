@@ -1,6 +1,5 @@
 package study.datajpa.repository;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +17,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.QueryHint;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest
@@ -295,7 +293,7 @@ class MemberRepositoryTest {
         Specification<Member> spec = MemberSpec.username("m1").and(MemberSpec.teamName("teamA"));
         List<Member> result = memberRepository.findAll(spec);
 
-        org.assertj.core.api.Assertions.assertThat(result.size()).isEqualTo(1);
+        assertThat(result.size()).isEqualTo(1);
     }
 
     @Test
@@ -325,6 +323,6 @@ class MemberRepositoryTest {
 
         List<Member> result = memberRepository.findAll(example);
 
-        org.assertj.core.api.Assertions.assertThat(result.get(0).getUsername()).isEqualTo("m1");
+        assertThat(result.get(0).getUsername()).isEqualTo("m1");
     }
 }
